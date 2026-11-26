@@ -1,12 +1,13 @@
-name: Workflow - Context
-on:
-  push:
+name: Context
+
+on: push
+
 jobs:
-  display-content-information:
+  describe:
     runs-on: ubuntu-latest
     steps:
-      - name: print context info
-        runs: |
+      - name: Print run context
+        run: |
           echo "Repository: ${{ github.repository }}"
           echo "Branch:     ${{ github.ref_name }}"
           echo "Commit:     ${{ github.sha }}"
