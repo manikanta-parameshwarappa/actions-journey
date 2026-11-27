@@ -16,4 +16,4 @@ jobs:
     needs: [lint, unit-tests]
     steps:
       - name: print anything
-        run: "fan in"
+        run: echo "fan in"
