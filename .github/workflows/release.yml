@@ -1,0 +1,19 @@
+name: fanout-fanin
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print something
+        run: echo "Hi form lint"
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print something
+        run: echo "Hi from unit-tests"
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-tests]
+    steps:
+      - name: print anything
+        run: "fan in"
