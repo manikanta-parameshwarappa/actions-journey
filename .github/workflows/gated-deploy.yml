@@ -1,0 +1,11 @@
+name: gha conditions
+on: push
+jobs:
+  gha-conditions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo "hi from step 1"
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        run: echo "hello from deploy"
